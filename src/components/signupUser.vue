@@ -7,40 +7,49 @@
             @ok="handleOk">
             <form ref="form" @submit.stop.prevent="handleSubmit">
 
-                <b-form-group label="Name">
-                    <b-form-input  v-model="user.name"  required></b-form-input>
+                <b-form-group label="Name" invalid-feedback="Name is required"
+          :state="nameState">
+                    <b-form-input  v-model="user.name"  :state="nameState"
+            required></b-form-input>
                 </b-form-group>
 
-                <b-form-group label="Age" >
-                    <b-form-input  v-model="user.age"  required></b-form-input>
+                <b-form-group label="Age" invalid-feedback="Age is required"
+          :state="nameState" >
+                    <b-form-input  v-model="user.age"  :state="nameState" required></b-form-input>
                 </b-form-group>
 
-                <b-form-group label="Password">
-                    <b-form-input v-model="user.pass" required></b-form-input>
+                <b-form-group label="Password" invalid-feedback="Password is required"
+          :state="nameState">
+                    <b-form-input v-model="user.pass" :state="nameState" required></b-form-input>
                 </b-form-group>
 
-                <b-form-group label="Phone" >
-                    <b-form-input  v-model="user.phone"  required></b-form-input>
+                <b-form-group label="Phone" invalid-feedback="Phone is required"
+          :state="nameState" >
+                    <b-form-input  v-model="user.phone" :state="nameState" required></b-form-input>
                 </b-form-group>
 
-                <b-form-group label="Email" >
-                    <b-form-input  v-model="user.email"  required></b-form-input>
+                <b-form-group label="Email" invalid-feedback="Email is required"
+          :state="nameState">
+                    <b-form-input  v-model="user.email" :state="nameState" required></b-form-input>
                 </b-form-group>
 
-                <b-form-group label="Date" >
-                    <b-form-input  v-model="user.date"  type="date" required></b-form-input>
+                <b-form-group label="Date" invalid-feedback="Date is required"
+          :state="nameState" >
+                    <b-form-input  v-model="user.date"  type="date" :state="nameState" required></b-form-input>
                 </b-form-group>
 
-                <b-form-group label="Gender" >
-                <select id="gender" v-model="user.gender">
+                <b-form-group label="Gender" invalid-feedback="Gender is required"
+          :state="nameState" >
+                <select id="gender" :state="nameState" v-model="user.gender">
                     <option >Men</option>
                     <option >Women</option>
                 
                 </select>
                 </b-form-group>
 
-                <b-form-group label="Address" >
-                    <b-form-input  v-model="user.address"  required></b-form-input>
+                <b-form-group label="Address" invalid-feedback="Address is required"
+          :state="nameState">
+                    <b-form-input  v-model="user.address" :state="nameState" required></b-form-input>
                 </b-form-group>
 
                 
