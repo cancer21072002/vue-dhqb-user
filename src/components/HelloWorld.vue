@@ -102,7 +102,14 @@ export default {
 
   methods: {
     clickAdd (item) {
-      this.students.push(item)
+      let index= this.students.findIndex((c)=>c.id===item.id)
+      if(index>=0){
+        this.students.splice(index,1,item)
+      }else{
+        this.students.push(item);
+      }
+      return
+      
     },
 
     clickDelete (itemDelete) {
