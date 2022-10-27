@@ -100,7 +100,7 @@ export default {
             
             console.log(this.user);
 
-            this.$emit("OnSubmit",this.user)
+            this.$emit("submit",this.user)
 
 
             this.user = {

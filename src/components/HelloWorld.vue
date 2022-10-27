@@ -2,7 +2,7 @@
   <div>
     <H1>LIST USERS</H1>
 
-    <signupUser :edit="userEdit" @OnSubmit="clickAdd"/>
+    <signupUser :edit="userEdit" @submit="clickAdd"/>
     <table>
       <tr>
         <th>ID</th>
@@ -95,27 +95,35 @@ export default {
         
 
       ],
-      methods:{
-        clickAdd(item){
-          this.students.push(item)
-        },
 
-        clickDelete(itemDelete){
-          console.log(itemDelete);
-          for(let i=0;i<this.students.legth;i++){
-            if (itemDelete.id===this.students[i].id){
-              this.students.splice(i,1)
-            }
-          }
-        },
-        clickEdit(itemEdit){
-          this.userEdit = itemEdit;
-          console.log(itemEdit);
-        }
-      }
 
     }
   },
+
+  methods: {
+    clickAdd (item) {
+      this.students.push(item)
+    },
+
+    clickDelete (itemDelete) {
+      // console.log(itemDelete);
+      // console.log(this.students.length);
+      for(var i = 0; i < this.students.length; i++) {
+        console.log(i);
+        if (itemDelete.id === this.students[i].id)
+         {
+          console.log("before:" + this.students.length);
+          this.students.splice(i,1)
+          console.log("after:" + this.students.length);
+        }
+      }
+    },
+
+    clickEdit (itemEdit) {
+      this.userEdit = itemEdit;
+      console.log(itemEdit);
+    }
+  }
 }
 </script>
 
